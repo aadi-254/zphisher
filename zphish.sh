@@ -2,7 +2,7 @@
 
 PYTHON_FILE="server.py"
 
-echo "🔍 Checking for Python3..."
+echo "🔍 Checking for resources.we are going to first installed all dependencies (Only Once)"
 if ! command -v python3 &>/dev/null; then
     echo "❌ Python3 is not installed. Please install it first."
     exit 1
