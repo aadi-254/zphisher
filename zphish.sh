@@ -10,6 +10,14 @@ if ! command -v python3 &>/dev/null; then
 fi
 echo "✅ Python3 is available."
 
+echo "🔍 Checking for pip3..."
+if ! command -v pip3 &>/dev/null; then
+    echo "📦 Installing pip3..."
+    sudo apt update && sudo apt install -y python3-pip
+else
+    echo "✅ pip3 is available."
+fi
+
 # Required Python packages
 REQUIRED_PKG=("flask")
 
