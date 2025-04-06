@@ -18,7 +18,7 @@ for pkg in "${REQUIRED_PKG[@]}"; do
     python3 -c "import $pkg" 2>/dev/null
     if [ $? -ne 0 ]; then
         echo "📦 Installing missing package: $pkg"
-        pip install $pkg
+        pip3 install $pkg
     else
         echo "✅ $pkg is already installed."
     fi
@@ -26,8 +26,11 @@ done
 
 echo "🔍 Checking for cloudflared..."
 if ! command -v cloudflared &>/dev/null; then
-    echo "📦 Installing cloudflared..."
-    sudo apt update && sudo apt install -y cloudflared
+    echo "📦 Installing cloudflared manually..."
+    wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+    sudo dpkg -i cloudflared-linux-amd64.deb
+    sudo apt-get install -f -y
+    rm cloudflared-linux-amd64.deb
 else
     echo "✅ cloudflared is already installed."
 fi
@@ -43,9 +46,13 @@ else
     echo "✅ Port $PORT is free."
 fi
 
-# Clear old logs
-rm -f cf_tunnel.log
+# Optional: Clear old logs (customize this line if you have logs)
+if [ -f "log.txt" ]; then
+    echo "🧽 Clearing old logs..."
+    > log.txt
+    echo "✅ Logs cleared."
+fi
 
-# Final info and launch
+# Start the Python server
 echo "🚀 Starting $PYTHON_FILE..."
 python3 "$PYTHON_FILE"
