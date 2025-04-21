@@ -31,6 +31,41 @@ for pkg in "${REQUIRED_PKG[@]}"; do
         echo "✅ $pkg is already installed."
     fi
 done
+# Check for cloudflared
+echo "🔍 Checking for cloudflared..."
+if ! command -v cloudflared >/dev/null 2>&1; then
+    echo "📦 Installing cloudflared..."
+    
+    # Detect architecture (assuming x86_64 for simplicity)
+    ARCH=$(uname -m)
+    CLOUDFLARED_URL=""
+
+    if [[ "$ARCH" == "x86_64" ]]; then
+        CLOUDFLARED_URL="https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64"
+    elif [[ "$ARCH" == "aarch64" ]]; then
+        CLOUDFLARED_URL="https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64"
+    else
+        echo "❌ Unsupported architecture: $ARCH"
+        exit 1
+    fi
+
+    curl -L -o cloudflared "$CLOUDFLARED_URL"
+    chmod +x cloudflared
+
+    # Move to user bin if sudo available, else local bin
+    if command -v sudo >/dev/null 2>&1; then
+        sudo mv cloudflared /usr/local/bin/
+    else
+        mkdir -p "$HOME/.local/bin"
+        mv cloudflared "$HOME/.local/bin/"
+        export PATH="$HOME/.local/bin:$PATH"
+        echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc  # persist PATH update
+    fi
+
+    echo "✅ cloudflared installed!"
+else
+    echo "✅ cloudflared is already installed."
+fi
 
 echo "🔍 Checking for cloudflared..."
 if ! command -v cloudflared &>/dev/null; then
